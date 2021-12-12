@@ -26,17 +26,17 @@ public class Main {
 		
 		ArrayList<String>  list = ListDiseaseOfPatient(patientName, model);
 		if(list.size() != 0) {
-			System.out.println("\npatient diseases:");	
-			for(int i = 0; i < list.size(); i++) {
-				System.out.println(" " + list.get(i));
+			System.out.println("\npatient diseases:");
+			for (String s : list) {
+				System.out.println(" " + s);
 			}
 		}
 		
 		list = ListDrugsOfPatient(patientName, model);
 		if(list.size() != 0) {
-			System.out.println("\npatient drugs:");	
-			for(int i = 0; i < list.size(); i++) {
-				System.out.println(" " + list.get(i));
+			System.out.println("\npatient drugs:");
+			for (String s : list) {
+				System.out.println(" " + s);
 			}
 		}
 		
@@ -110,9 +110,9 @@ public class Main {
 		while (iter.hasNext()) { 
 			String name = iter.nextResource().getProperty(property) .getString();
 			ArrayList<String> drugs = ListDrugsOfPatient(name, model);
-			ArrayList<pair> dates = new ArrayList<pair>();
-			for(int i = 0; i < drugs.size(); i++) {
-				dates.add(listDatesOfDrug(drugs.get(i), model));
+			ArrayList<pair> dates = new ArrayList<>();
+			for (String drug : drugs) {
+				dates.add(listDatesOfDrug(drug, model));
 			}
 			
 			
